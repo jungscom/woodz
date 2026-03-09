@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.hide { display: none; }
+.banner { position: relative; box-sizing: border-box; }
+.banner h2 { max-width: 700px; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 2; }
+.banner img { width: 100%; }
+
+.contents { padding: 80px 0; }
+.contents h2 { text-align: center; margin: 70px 0; font-size: 22px; }
+
+.albumSwiper { width: 100%; height: 100%; padding: 20px; box-sizing: border-box; }
+.albumSlide { text-align: center; display: flex; justify-content: center; align-items: center; transition: all 0.7s; }
+.albumSlide img { width: 100%; display: block; object-fit: cover; margin: auto; }
+
+.album { position: relative; width: 100%; aspect-ratio: 1/1; perspective: 1000px; }
+.cover { width: 100%; display: block; position: relative; top: 0; left: 0; transition: all 0.7s; z-index: 2; }
+.lp { width: 100%; position: absolute; top: 0; left: 0; transition: all 0.7s; z-index: 1; }
+
+.swiper { width: 100%; }
+.swiper-slide { flex-shrink: 0; }
+.swiper-slide .lp, .swiper-slide .cover { transform: translateX(0); }
+.swiper-slide-active .lp { transform: translateX(45%); }
+.swiper-slide-active .cover { transform: translateX(-20%); }
