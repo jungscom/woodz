@@ -1,23 +1,209 @@
 @charset "utf-8";
 
-.hide { display: none; }
-.banner { position: relative; box-sizing: border-box; }
-.banner h2 { max-width: 700px; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 2; }
-.banner img { width: 100%; }
+.hide { 
+  display: none; 
+}
+.hero { 
+  width: 100%;
+  height: 100vh;
+  position: relative; 
+  box-sizing: border-box; 
+}
+.main_img { height: 100vh; }
+.hero .swiper {
+  height: 100%;
+}
+.hero .swiper-slide {
+  height: 100%;
+}
+.hero h2 img { 
+  width: 50%; 
+  position: absolute; 
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%,-50%); 
+  z-index: 2;
+  pointer-events: none;
+}
+.heroBg1 {
+  background: url(../img/woodz_main_img1.jpg) center/cover no-repeat;
+}
+.heroBg2 {
+  background: url(../img/woodz_main_img2.jpg) center/cover no-repeat;
+}
+.heroBg3 {
+  background: url(../img/woodz_main_img3.jpg) center/cover no-repeat;
+}
 
-.contents { padding: 80px 0; }
-.contents h2 { text-align: center; margin: 70px 0; font-size: 22px; }
+.scrollbar {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  animation: scrollMove 1.5s infinite;
+  z-index: 5;
+}
 
-.albumSwiper { width: 100%; height: 100%; padding: 20px; box-sizing: border-box; }
-.albumSlide { text-align: center; display: flex; justify-content: center; align-items: center; transition: all 0.7s; }
-.albumSlide img { width: 100%; display: block; object-fit: cover; margin: auto; }
+@keyframes scrollMove{
+  0%{ transform: translate(-50%,0); }
+  50%{ transform: translate(-50%,8px); }
+  100%{ transform: translate(-50%,0); }
+}
 
-.album { position: relative; width: 100%; aspect-ratio: 1/1; perspective: 1000px; }
-.cover { width: 100%; display: block; position: relative; top: 0; left: 0; transition: all 0.7s; z-index: 2; }
-.lp { width: 100%; position: absolute; top: 0; left: 0; transition: all 0.7s; z-index: 1; }
+.albumList { 
+  padding: 80px 0; 
+}
+.albumList h2 { 
+  text-align: center; 
+  margin-bottom: 50px;
+  font-size: 22px; 
+}
 
-.swiper { width: 100%; }
-.swiper-slide { flex-shrink: 0; }
-.swiper-slide .lp, .swiper-slide .cover { transform: translateX(0); }
-.swiper-slide-active .lp { transform: translateX(45%); }
-.swiper-slide-active .cover { transform: translateX(-20%); }
+.albumSwiper { 
+  width: 100%; 
+  padding: 40px 0; 
+  box-sizing: border-box; 
+}
+.albumSlide { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transition: all 0.5s;
+}
+.albumSlide img { 
+  width: 100%; 
+  display: block; 
+  object-fit: cover; 
+  margin: auto; 
+}
+
+.album { 
+  position: relative; 
+  width: 100%; 
+  height: auto;
+  aspect-ratio: 1/1; 
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5))
+}
+.cover { 
+  width: 100%; 
+  position: relative; 
+  z-index: 5; 
+  transition: all 0.7s cubic-bezier(0.25,0.8,0.25,1); 
+}
+.lp { 
+  width: 100%; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  z-index: 1; 
+  transition: all 0.7s cubic-bezier(0.25,0.8,0.25,1);
+}
+
+.swiper,
+.swiper-slide { 
+  width: 100%; 
+}
+.swiper-slide .lp, 
+.swiper-slide .cover { 
+  transform: translateX(0); 
+}
+.swiper-slide-active .lp { 
+  transform: translateX(45%) rotate(15deg); 
+}
+.swiper-slide-active .cover { 
+  transform: translateX(-20%); 
+}
+
+.albumTrackBox {
+  width: 50%;
+  margin: 40px auto 0;
+  text-align: center;
+}
+.trackHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.albumTitle {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.trackToggle {
+  padding: 10px 24px;
+  cursor: pointer;
+}
+.trackList {
+  display: none;
+  margin-top: 20px;
+}
+.trackList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  cursor: pointer;
+}
+.trackList.twoCol {
+  column-count: 2;
+  column-gap: 40px;
+}
+.trackList.twoCol li {
+  break-inside: avoid;
+}
+.trackIcon {
+  width: 30px;
+  text-align: center;
+  opacity: 0.6;
+}
+.trackPlay {
+  display: none;
+}
+.trackList li:hover .trackNum {
+  display: none;
+}
+.trackList li:hover .trackPlay {
+  display: inline;
+}
+.trackList li.active .trackNum{
+  display:none;
+}
+.trackList li.active .trackPlay{
+  display:inline;
+}
+.trackList li.active {
+  font-weight: bold;
+}
+.trackTitle {
+  flex: 1;
+  text-align: left;
+}
+
+#playerWrap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.playing .lp img {
+  animation: lpSpin 3s linear infinite;
+}
+
+@keyframes lpSpin{
+  from{transform: rotate(0deg)}
+  to{transform: rotate(360deg)}
+}
+
+.videoSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

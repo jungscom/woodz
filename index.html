@@ -24,18 +24,19 @@
 <body>
   <header id="top">
     <div id="top_wrap">
-      <h1><a href="woodz_index.html"><img src="img/woodz_logo_white.png" alt="WOODZ"></a></h1>
+      <h1><a href="index.html"><img src="img/woodz_logo_white.png" alt="WOODZ"></a></h1>
       <div class="menu_wrap">
         <div class="menu_btn"><!-- mobile -->
           <span class="line1"></span>
           <span class="line2"></span>
+          <span class="line3"></span>
         </div><!-- menu_btn -->
         
         <nav class="gnb">
           <ul>
-            <li><a href="#">WOODZ</a></li>
-            <li><a href="woodz_album.html">ALBUM</a></li>
-            <li><a href="#">VIDEO</a></li>
+            <li><a href="#woodz">WOODZ</a></li>
+            <li><a href="#album">ALBUM</a></li>
+            <li><a href="https://www.youtube.com/channel/UCaMhpehN8xNWkVJB3ZQY0qQ" target="_blank">VIDEO</a></li>
             <li><a href="#">COMMUNITY</a></li>
             <li><a href="#">NOTICE</a></li>
           </ul>
@@ -45,27 +46,153 @@
   </header><!-- top -->
   
   <main id="container">
-    <section class="banner">
+    <section id="woodz" class="hero">
       <h2><img src="img/woodz_logo_white2.png" alt="WOODZ"></h2>
       <div class="main_img">
         <div class="swiper bannerSwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/woodz_main_img1.jpg" alt="Archive1">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="img/woodz_main_img2.jpg" alt="I'll never love agin">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="img/woodz_ooli.jpg" alt="OO-LI">
-            </div>
+            <div class="swiper-slide heroBg1"></div>
+            <div class="swiper-slide heroBg2"></div>
+            <div class="swiper-slide heroBg3"></div>
           </div>
         </div>
       </div><!-- main_img -->
-    </section><!-- banner -->
-    
+
+      <div class="scrollbar">
+        <span>SCROLL</span>
+      </div>
+    </section><!-- hero -->
+
+    <section id="album" class="albumList">
+      <h2>ALBUM</h2>
+      <div class="swiper albumSwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+              <div class="cover">
+                <img src="img/archive1.webp" alt="archive1">
+              </div>
+
+              <div class="lp">
+                <img src="img/archive1_lp.png" alt="archive1">
+              </div>
+            </div><!-- album -->
+          </div>
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+
+              <div class="cover">
+                <img src="img/i'll_never_love_again_cover.jpg" alt="i'll never love agin">
+              </div>
+
+              <div class="lp">
+                <img src="img/i'll_never_love_again_lp.png" alt="i'll never love agin">
+              </div>
+
+            </div><!-- album -->
+          </div>
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+
+              <div class="cover">
+                <img src="img/amnesia.jpg" alt="amnesia">
+              </div>
+
+              <div class="lp">
+                <img src="img/amnesia_lp.png" alt="amnesia">
+              </div>
+
+            </div><!-- album -->
+          </div>
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+
+              <div class="cover">
+                <img src="img/oo-li_cover.jpg" alt="oo-li">
+              </div>
+
+              <div class="lp">
+                <img src="img/oo-li_lp.png" alt="oo-li">
+              </div>
+
+            </div><!-- album -->
+          </div>
+          
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+              <div class="cover">
+                <img src="img/colorful_trauma_cover.jpg" alt="colorul trauma">
+              </div>
+
+              <div class="lp">
+                <img src="img/colorful_trauma_lp.png" alt="colorul trauma">
+              </div>
+
+            </div><!-- album -->
+          </div>
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+              <div class="cover">
+                <img src="img/only_lovers_left_cover.jpg" alt="only lovers left">
+              </div>
+              <div class="lp">
+                <img src="img/only_lovers_left_lp.png" alt="only lovers left">
+              </div>
+
+            </div><!-- album -->
+          </div>
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+
+              <div class="cover">
+                <img src="img/woops_cover.jpg" alt="woops!">
+              </div>
+
+              <div class="lp">
+                <img src="img/woops_lp.png" alt="woops!">
+              </div>
+
+            </div><!-- album -->
+          </div>
+
+          <div class="swiper-slide albumSlide">
+            <div class="album">
+
+              <div class="cover">
+                <img src="img/equal_cover.png" alt="equal">
+              </div>
+
+              <div class="lp">
+                <img src="img/equal_lp.png" alt="equal">
+              </div>
+
+            </div><!-- album -->
+          </div>
+        </div>
+      </div><!-- swiper -->
+
+      <div class="albumTrackBox">
+        <div class="trackHeader">
+          <h3 class="albumTitle"></h3>
+          <div class="trackToggle">TRACKLIST</div>
+        </div>
+        <ul class="trackList"></ul>
+      </div><!-- albumTrackBox -->
+    </section><!-- albumList -->
+
+    <div id="playerWrap">
+      <iframe id="musicPlayer" src="" width="0" height="0" frameborder="0" allow="autoplay"></iframe>
+    </div>
+
+    <section class="videoSection">
+      <iframe width="90%" height="60%" src="https://www.youtube.com/embed/8EZZvgLncFk?si=Vbu7E-lKCHhhCSOJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
   </main><!-- container -->
   
   <footer>

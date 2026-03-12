@@ -1,0 +1,29 @@
+html 따로 제작
+
+<div id="headers"></div>
+<div id="menus"></div>
+<div id="footers"></div>
+
+
+// js
+
+$(function () {
+
+  $("#headers").load("common/header.html", function (res, status) {
+    if (status === "error") {
+      console.error("헤더 로드 실패");
+    }
+  });
+
+  $("#footers").load("common/footer.html", function (res, status) {
+    if (status === "error") {
+      console.error("푸터 로드 실패");
+    }
+  });
+
+  $("#menus").load("common/menu.html", function (res, status) {
+    if (status === "error") {
+      console.error("메뉴 로드 실패");
+    }
+  });
+}
