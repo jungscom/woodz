@@ -223,13 +223,6 @@ $(function(){
   $('.trackToggle').on('click', function(){
     const list = $('.trackList');
     list.stop().slideToggle(300, function(){
-
-      // 열리면 스크롤
-      if(list.is(':visible')){
-        $('html, body').animate({
-          scrollTop: $(list).offset().top - 80
-        }, 400);
-      }
     });
   });
 
