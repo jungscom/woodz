@@ -181,11 +181,9 @@ $(function(){
 
     renderTracklist(index);
 
-    $('.trackList').hide();
-
     // 슬라이드 시 음악 멈춤
-    $('#musicPlayer').attr('src','');
-    currentTrack = null;
+    /* $('#musicPlayer').attr('src','');
+    currentTrack = null; */
 
     $('.albumSlide').removeClass('playing');
     $('.trackList li').removeClass('active');
@@ -222,6 +220,18 @@ $(function(){
 
   $('.trackToggle').on('click', function(){
     const list = $('.trackList');
+    list.stop().slideToggle(300, function(){
+    });
+  });
+
+  $('.snsToggle1').on('click', function(){
+    const list = $('.snslist1');
+    list.stop().slideToggle(300, function(){
+    });
+  });
+
+  $('.snsToggle2').on('click', function(){
+    const list = $('.snslist2');
     list.stop().slideToggle(300, function(){
     });
   });

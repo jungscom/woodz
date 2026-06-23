@@ -207,3 +207,28 @@
   justify-content: center;
   align-items: center;
 }
+
+.commuIcon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.commuIcon ul li {
+  text-align: center;
+  padding: 5px;
+}
+
+.snsToggle1,
+.snsToggle2 {
+  cursor: pointer;
+}
+
+.snslist1,
+.snslist2 {
+  display: none;
+  padding: 10px;
+  font-size: 15px;
+}
